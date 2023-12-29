@@ -23,7 +23,7 @@ const { quizzes } = useQuiz();
     </section>
     <section class="space-y-3 lg:space-y-8">
       <router-link class="block bg-white px-4 py-3 rounded flex items-center space-x-4 hover:scale-105 focus:scale-105 transition-transform transform-gpu" v-for="quiz in quizzes" :to="quiz.title">
-        <span class="w-10 h-10 rounded md:w-14 md:h-14" :style="{backgroundColor: quiz['icon-bg']}">
+        <span class="flex items-center justify-center w-10 h-10 rounded md:w-14 md:h-14" :style="{backgroundColor: quiz['icon-bg']}">
           <img :src="quiz.icon" alt="" class="p-[5.72px]">
         </span>
         <span class="text-dark-navy font-medium text-lg md:text-headingS">
