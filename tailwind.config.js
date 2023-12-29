@@ -1,3 +1,5 @@
+const defaultTheme = require('tailwindcss/defaultTheme')
+
 /** @type {import('tailwindcss').Config} */
 export default {
   content: [
@@ -15,6 +17,9 @@ export default {
         'light-grey': '#F4F6FA',
         'green': '#26D782',
         'red': '#EE5454'
+      },
+      fontFamily: {
+        'sans': ['Rubik', ...defaultTheme.fontFamily.sans]
       },
       fontSize: {
         display: '9rem',

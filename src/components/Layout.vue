@@ -2,7 +2,7 @@
 
 </script>
 <template>
-    <header class="flex items-center justify-between p-4">
+    <header class="flex items-center justify-between p-6">
         <div>
 
         </div>
@@ -27,7 +27,7 @@
             </svg>
         </div>
     </header>
-    <main>
+    <main v-bind="$attrs">
         <slot></slot>
     </main>
 </template>
