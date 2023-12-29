@@ -1,23 +1,24 @@
 // libs
-import {createRouter, createWebHistory} from 'vue-router';
+import { createRouter, createWebHistory } from 'vue-router';
 // screens
 import Home from './screens/Home.vue';
-import Quiz from './screens/Quiz.vue';
+
 
 const routes = [
     {
         path: '/',
-        component: Home
+        component: Home,
+        name: 'Home'
     },
     {
-        path: '/:quiz',
-        component: Quiz
+        path: '/quiz/:quiz',
+        component: () => import('./screens/Quiz.vue'),
+        name: 'Quiz'
     }
 ];
 
 
 export default createRouter({
-    // 4. Provide the history implementation to use. We are using the hash history for simplicity here.
     history: createWebHistory(),
-    routes, // short for `routes: routes`
+    routes,
 });
