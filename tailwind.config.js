@@ -26,6 +26,7 @@ export default {
         'headingL': '4rem',
         'headingM': '2.25rem',
         'headingS': '1.75rem',
+        'bodyS': '1.25rem',
         'bodyM': '0.75rem',
       }
     },
