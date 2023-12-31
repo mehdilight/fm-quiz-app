@@ -1,7 +1,20 @@
-<template>
-  <header class="flex items-center justify-between p-6">
-    <div>
+<script setup>
+import useQuiz from './composables/useQuiz';
 
+const { selectedQuiz } = useQuiz();
+</script>
+<template>
+  <header class="flex items-center justify-between p-6 lg:max-w-[1153px] lg:mx-auto">
+    <div>
+      <router-link class="flex items-center space-x-4 md:space-x-6" to="/" v-if="selectedQuiz.title">
+        <span class="flex items-center justify-center w-10 h-10 rounded md:w-14 md:h-14"
+          :style="{ backgroundColor: selectedQuiz['icon-bg'] }">
+          <img :src="selectedQuiz?.icon" alt="" class="p-[5.72px]">
+        </span>
+        <span class="font-medium text-lg text-dark-navy md:text-headingS">
+          {{ selectedQuiz?.title }}
+        </span>
+      </router-link>
     </div>
     <div class="flex items-center space-x-2">
       <svg class="w-4 h-4" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">

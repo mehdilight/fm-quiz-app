@@ -3,7 +3,6 @@ import { createRouter, createWebHistory } from 'vue-router';
 // screens
 import Home from './screens/Home.vue';
 
-
 const routes = [
     {
         path: '/',
@@ -13,7 +12,7 @@ const routes = [
     {
         path: '/quiz/:quiz',
         component: () => import('./screens/Quiz.vue'),
-        name: 'Quiz'
+        name: 'Quiz',
     }
 ];
 
