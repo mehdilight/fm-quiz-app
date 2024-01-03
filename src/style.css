@@ -2,4 +2,45 @@
 
 @tailwind base;
 @tailwind components;
+@layer components {
+    .answer-selector {
+        @apply outline-none w-full block bg-white px-4 py-3 rounded flex items-center space-x-4 hover:scale-105 focus:scale-105 transition-transform transform-gpu;
+    }
+
+    .answer-selector.selected {
+        @apply ring ring-purple;
+    }
+
+    .answer-selector.correct {
+        @apply text-white ring-green;
+    }
+
+    .answer-selector.wrong {
+        @apply ring-red;
+    }
+
+    .answer-selector-index {
+        @apply font-medium flex bg-light-grey items-center text-grey-navy text-headingS justify-center flex-shrink-0 w-10 h-10 rounded md:w-14 md:h-14;
+    }
+
+    .answer-selector.selected .answer-selector-index {
+        @apply text-white !bg-purple;
+    }
+    .answer-selector.correct .answer-selector-index {
+        @apply text-white !bg-green;
+    }
+    .answer-selector.wrong .answer-selector-index {
+        @apply text-white !bg-red;
+    }
+
+    .answer-selector:not(.correct):hover .answer-selector-index,
+    .answer-selector:not(.wrong):hover .answer-selector-index,
+    .answer-selector:not(.selected):hover .answer-selector-index {
+        @apply bg-purple/50 text-white;
+    }
+
+    .answer-selector-body {
+        @apply text-dark-navy font-medium text-lg md:text-headingS text-left;
+    }
+}
 @tailwind utilities;
