@@ -48,7 +48,5 @@ const handleChange = (e) => {
       </svg>
     </div>
   </header>
-  <main>
-    <RouterView />
-  </main>
+  <RouterView />
 </template>
