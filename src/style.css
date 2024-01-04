@@ -4,7 +4,7 @@
 @tailwind components;
 @layer components {
     .answer-selector {
-        @apply outline-none w-full block bg-white px-4 py-3 rounded flex items-center space-x-4 hover:scale-105 focus:scale-105 transition-transform transform-gpu;
+        @apply outline-none w-full block bg-white dark:bg-navy px-4 py-3 rounded flex items-center space-x-4 hover:scale-105 focus:scale-105 transition-transform transform-gpu;
     }
 
     .answer-selector.selected {
@@ -12,7 +12,7 @@
     }
 
     .answer-selector.correct {
-        @apply text-white ring-green;
+        @apply text-white dark:text-dark-navy ring-green;
     }
 
     .answer-selector.wrong {
@@ -40,7 +40,7 @@
     }
 
     .answer-selector-body {
-        @apply text-dark-navy font-medium text-lg md:text-headingS text-left;
+        @apply text-dark-navy dark:text-white font-medium text-lg md:text-headingS text-left;
     }
 }
 @tailwind utilities;

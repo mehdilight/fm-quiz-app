@@ -88,15 +88,15 @@ onBeforeMount(() => {
   <PageWrapper>
     <section class="mb-10">
       <template v-if="!shouldDisplayScore">
-        <p class="text-sm text-dark-navy font-light italic md:text-bodyS mb-3 md:mb-7">
+        <p class="text-sm text-dark-navy dark:text-white font-light italic md:text-bodyS mb-3 md:mb-7">
           Question {{ currentQuestionIndex + 1 }} of {{ selectedQuiz.questions?.length }}
         </p>
-        <p class="text-xl md:text-headingM text-dark-navy leading-tight">
+        <p class="text-xl md:text-headingM text-dark-navy dark:text-white leading-tight">
           {{ currentQuestion.question }}
         </p>
       </template>
       <template v-else>
-        <h1 class="text-4xl text-dark-navy mb-4 md:text-headingL leading-tight">
+        <h1 class="text-4xl text-dark-navy dark:text-white mb-4 md:text-headingL leading-tight">
           <span class="font-light">
             Quiz completed
           </span> <br>
@@ -130,17 +130,17 @@ onBeforeMount(() => {
       </button>
     </section>
     <section v-else>
-      <div class="p-8 rounded-xl bg-white text-center flex flex-col justify-center items-center">
+      <div class="p-8 rounded-xl bg-white dark:bg-navy text-center flex flex-col justify-center items-center">
         <div class="flex items-center space-x-4 mb-4">
           <span class="flex items-center justify-center w-10 h-10 rounded md:w-14 md:h-14"
             :style="{ backgroundColor: selectedQuiz['icon-bg'] }">
             <img :src="selectedQuiz.icon" alt="" class="p-[5.72px]">
           </span>
-          <span class="text-dark-navy font-medium text-lg md:text-headingS">
+          <span class="text-dark-navy dark:text-white font-medium text-lg md:text-headingS">
             {{ selectedQuiz.title }}
           </span>
         </div>
-        <div class="text-dark-navy">
+        <div class="text-dark-navy dark:text-white">
           <span class="text-[88px] font-medium">{{ score }}</span> <br>
           <span>
             out of {{ selectedQuiz.questions.length }}
