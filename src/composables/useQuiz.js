@@ -1,6 +1,5 @@
 import { ref } from 'vue';
 import QuizData from './data.json';
-import { computed } from 'vue';
 
 const quizzes = ref(QuizData.quizzes);
 
