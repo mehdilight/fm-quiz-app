@@ -88,12 +88,20 @@ onBeforeMount(() => {
   <PageWrapper>
     <section class="mb-10">
       <template v-if="!shouldDisplayScore">
-        <p class="text-sm text-dark-navy dark:text-white font-light italic md:text-bodyS mb-3 md:mb-7">
-          Question {{ currentQuestionIndex + 1 }} of {{ selectedQuiz.questions?.length }}
-        </p>
-        <p class="text-xl md:text-headingM text-dark-navy dark:text-white leading-tight">
-          {{ currentQuestion.question }}
-        </p>
+        <div class="lg:h-[300px] flex flex-col justify-between">
+          <div>
+            <p class="text-sm text-dark-navy dark:text-white font-light italic md:text-bodyS mb-3 md:mb-7">
+              Question {{ currentQuestionIndex + 1 }} of {{ selectedQuiz.questions?.length }}
+            </p>
+            <p class="text-xl md:text-headingM text-dark-navy dark:text-white leading-tight mb-10">
+              {{ currentQuestion.question }}
+            </p>
+          </div>
+          <div class="w-full bg-white rounded-full h-2.5 dark:bg-navy">
+            <div class="bg-purple h-2.5 rounded-full"
+              :style="{ width: `${((currentQuestionIndex + 1) * 100) / selectedQuiz.questions?.length}%` }"></div>
+          </div>
+        </div>
       </template>
       <template v-else>
         <h1 class="text-4xl text-dark-navy dark:text-white mb-4 md:text-headingL leading-tight">
@@ -148,7 +156,8 @@ onBeforeMount(() => {
         </div>
       </div>
       <div class="mt-4">
-        <button @click="playAgain" class="bg-purple w-full block font-medium px-4 py-3 rounded-xl text-white text-headingS hover:bg-purple/50">
+        <button @click="playAgain"
+          class="bg-purple w-full block font-medium px-4 py-3 rounded-xl text-white text-headingS hover:bg-purple/50">
           Play Again
         </button>
       </div>
